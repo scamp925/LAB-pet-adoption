@@ -11,7 +11,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
       type: "dino",
-      imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg"
+      imageUrl: "https://static.onecms.io/wp-content/uploads/sites/20/2021/09/10/t-rex-2000.jpg"
     },
     {
       name: "Whiskers",
@@ -53,7 +53,7 @@ const pets = [
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
       type: "dino",
-      imageUrl: "http://www.theouthousers.com/images/jck//ThanosCopter/news/grumpasaur.jpg"
+      imageUrl: "https://img.joomcdn.net/e67e1a5af556e4adb8fcb0edd76c23e52f5f85ff_1024_1024.jpeg"
     },
     {
       name: "Sassy",
@@ -74,7 +74,7 @@ const pets = [
       color: "Orange",
       specialSkill: "Can be around food without staring creepily at it.",
       type: "dino",
-      imageUrl: "http://www.cantref.com/userfiles/events/walking%20dino.jpg?w=600"
+      imageUrl: "https://www.mediastorehouse.co.uk/p/629/cartoon-orange-dinosaur-red-spikes-view-13558975.jpg"
     },
     {
       name: "Buster",
@@ -109,49 +109,49 @@ const pets = [
       color: "Brown",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
       type: "dino",
-      imageUrl: "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg"
+      imageUrl: "https://media.npr.org/assets/news/2010/01/27/twodinos-28ab1910d3f2cd1ab629951c5523c8c962af2360-s1100-c50.jpg"
     },
     {
       name: "Muffin",
       color: "Yellow",
       specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
+      imageUrl: "https://i.pinimg.com/originals/64/1e/61/641e6177260fd7d3c3a8a92ffa70dccf.jpg"
     },
     {
       name: "Salem",
       color: "Brown",
       specialSkill: "Proficient in air guitar",
       type: "dino",
-      imageUrl: "https://www.nation.co.ke/image/view/-/4078922/highRes/1742693/-/maxw/600/-/1453yvh/-/DINO.jpg"
+      imageUrl: "https://www.kindpng.com/picc/m/157-1578486_transparent-dinosaur-clipart-png-brown-dinosaur-clipart-png.png"
     },
     {
       name: "Callie",
       color: "Blue",
       specialSkill: "Listens attentively to boring stories.",
       type: "dog",
-      imageUrl: "http://dailynewsdig.com/wp-content/uploads/2014/03/Creative-And-Funny-Dog-Stock-Photography-Pictures-2.jpg"
+      imageUrl: "https://www.thesprucepets.com/thmb/j23YI-_ShgbPRBJ8Cgw3refe_wg=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/portrait-cute-gray-great-dane-puppy-with-blue-eyes-1252375901-b1d90e97e9b345b49da0a7c84c03ed9d.jpg"
     },
     {
       name: "Spooky",
       color: "Black",
       specialSkill: "Uses litter box at appropriate hours.",
       type: "cat",
-      imageUrl: "http://www.funnycatsite.com/pictures/Lazy_White_Cat.jpg"
+      imageUrl: "https://nationaltoday.com/wp-content/uploads/2020/10/shutterstock_98948531-640x514.jpg"
     },
     {
       name: "Miss kitty",
       color: "Red",
       specialSkill: "Owns a Nintendo Power Glove.",
       type: "dino",
-      imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715"
+      imageUrl: "https://i0.wp.com/onlydinosaurs.com/wp-content/uploads/2020/06/Amazing-Adult-Dragon-Costume-Black-Red-Color2-2.jpg"
     },
     {
       name: "Snuggles",
       color: "Orange",
       specialSkill: "Is comfortable with jokes about his receding hairline.",
       type: "cat",
-      imageUrl: "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg"
+      imageUrl: "https://570189-1841390-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/08/orange-tabby-cats.jpg"
     },
     {
       name: "Buddy",
@@ -165,14 +165,14 @@ const pets = [
       color: "Brown",
       specialSkill: "Participates in karaoke but does not force others to go out to karaoke.",
       type: "dog",
-      imageUrl: "http://www.dogbreedplus.com/dog_breeds/images/basset-hound-4.jpg"
+      imageUrl: "https://wallpaperaccess.com/full/463540.jpg"
     },
     {
       name: "Salem",
       color: "Red",
       specialSkill: "Knows the words to 4 rap songs.",
       type: "cat",
-      imageUrl: "http://funbk.s3.amazonaws.com/wp-content/uploads/2016/06/funny-cat-video-which-will-make-you-laugh-louder.jpg"
+      imageUrl: "https://www.rd.com/wp-content/uploads/2021/03/GettyImages-140594401-1-scaled.jpg"
     },
     {
       name: "Bubba",
@@ -207,7 +207,7 @@ const pets = [
       color: "Red",
       specialSkill: "Doesn’t get weirded out by the word “moist.”",
       type: "dino",
-      imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
+      imageUrl: "https://static.scientificamerican.com/sciam/cache/file/B4520B4E-BCC1-411C-BEC6541928BDB992_source.jpg?w=590&h=800&9DD618C2-44B0-4723-A4E1CF610359A966"
     }
   ];
 
@@ -217,11 +217,13 @@ const pets = [
   for (const animalCard of pets) {
     domString += `<div class="card" style="width: 18rem;">
     <img src="${animalCard.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-header">
+    ${animalCard.name}
+  </div>
     <div class="card-body">
-      <p class="card-text">${animalCard.name}</p>
       <p class="card-text">${animalCard.color}</p>
       <p class="card-text">${animalCard.specialSkill}</p>
-      <p class="card-text">${animalCard.type}</p>
+      <div class="card-footer">${animalCard.type}</div>
     </div>
   </div>`
   }
