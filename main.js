@@ -211,21 +211,42 @@ const pets = [
     }
   ];
 
-  const card = document.querySelector("#card");
-
-  let domString = "";
-  for (const animalCard of pets) {
-    domString += `<div class="card" style="width: 18rem;">
-    <img src="${animalCard.imageUrl}" class="card-img-top" alt="...">
-    <div class="card-header">
-    ${animalCard.name}
-  </div>
+  const allAnimalCards = () => {
+    document.querySelector("#card").innerHTML = ""
+  for (const animal of pets) {
+    document.querySelector("#card").innerHTML += `<div class="card" style="width: 18rem;">
+    <img src="${animal.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-header">${animal.name}</div>
     <div class="card-body">
-      <p class="card-text">${animalCard.color}</p>
-      <p class="card-text">${animalCard.specialSkill}</p>
-      <div class="card-footer">${animalCard.type}</div>
+      <p class="card-text">${animal.color}</p>
+      <p class="card-text">${animal.specialSkill}</p>
     </div>
+      <div class="card-footer">${animal.type}</div>
   </div>`
   }
+  }
 
-  card.innerHTML = domString;
+
+  const filterFunction = (event) => {
+    console.log(event.target.id);
+    const newArr = pets.filter((animal) => animal.type === event.target.id);
+    document.querySelector("#card").innerHTML = ""
+    for (const animal of newArr) {
+      document.querySelector("#card").innerHTML += `<div class="card" style="width: 18rem;">
+    <img src="${animal.imageUrl}" class="card-img-top" alt="...">
+    <div class="card-header">${animal.name}</div>
+    <div class="card-body">
+      <p class="card-text">${animal.color}</p>
+      <p class="card-text">${animal.specialSkill}</p>
+    </div>
+      <div class="card-footer">${animal.type}</div>
+  </div>`
+    }
+  }
+  
+  allAnimalCards();
+
+  document.querySelector("#cat").addEventListener("click", filterFunction);
+  document.querySelector("#dog").addEventListener("click", filterFunction);
+  document.querySelector("#dino").addEventListener("click", filterFunction);
+  document.querySelector("#viewAll").addEventListener("click", allAnimalCards);
