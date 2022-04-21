@@ -1,11 +1,32 @@
 body {
   background-color: midnightblue;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 15px;
+  width: 40%;
+}
+
+.new-text-color {
+  color: black;
+}
+
 .card-container {
   display: flex;
   flex-flow: row wrap;
 }
 
 div {
-  margin: 20px;
+  margin: 19px;
+}
+
+.card-header {
+  background-color: lightcyan;
+}
+
+.card-footer {
+  background-color: #FFFF8F;
 }
