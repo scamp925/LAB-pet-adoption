@@ -342,7 +342,20 @@ const renderToDom = (divId, textToRender) => {
       formModal.hide();
       addPetForm.reset();
     }); 
-  };
+
+    // DELETE BUTTON ON CARDS
+    document.querySelector("#card").addEventListener("click", (e) => {
+      // console.log(e.target.id) 
+      const [method, imageUrl] = e.target.id.split("--"); //splitting "delete" & the url
+
+      const index = pets.findIndex(taco => taco.imageUrl === imageUrl); //selecting ONLY the url
+
+      if (e.target.id.includes("delete")) {
+        pets.splice(index, 1);
+        allAnimalCards(pets);
+      }
+       });
+  }; //FIRST TRY AND I GOT THE DELETE BUTTON TO WORK PROPERLY!!!! AHHHHH!!!! I AM GETTING THIS!!!
 
   
   addPetBtnModal();
