@@ -223,7 +223,7 @@ const renderToDom = (divId, textToRender) => {
   const addPetBtnModal = () => {
     const domString = `
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add-pet">
+      <button type="button" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#add-pet">
       Add A Pet
       </button>
       <!-- Modal -->
@@ -295,6 +295,9 @@ const renderToDom = (divId, textToRender) => {
        <p class="card-text">${animal.specialSkill}</p>
        </div>
        <div class="card-footer">${animal.type}</div>
+       <div>
+          <button class="btn btn-danger delete-btn" id="delete--${animal.imageUrl}">Delete</button>
+        </div>
        </div>`;
      }
      renderToDom("#card", domString);
