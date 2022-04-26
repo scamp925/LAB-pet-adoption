@@ -223,7 +223,7 @@ const renderToDom = (divId, textToRender) => {
   const addPetBtnModal = () => {
     const domString = `
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add-pet">
+      <button type="button" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#add-pet">
       Add A Pet
       </button>
       <!-- Modal -->
@@ -295,6 +295,9 @@ const renderToDom = (divId, textToRender) => {
        <p class="card-text">${animal.specialSkill}</p>
        </div>
        <div class="card-footer">${animal.type}</div>
+       <div>
+          <button class="btn btn-danger delete-btn" id="delete--${animal.imageUrl}">Delete</button>
+        </div>
        </div>`;
      }
      renderToDom("#card", domString);
@@ -339,7 +342,20 @@ const renderToDom = (divId, textToRender) => {
       formModal.hide();
       addPetForm.reset();
     }); 
-  };
+
+    // DELETE BUTTON ON CARDS
+    document.querySelector("#card").addEventListener("click", (e) => {
+      // console.log(e.target.id) 
+      const [method, imageUrl] = e.target.id.split("--"); //splitting "delete" & the url
+
+      const index = pets.findIndex(taco => taco.imageUrl === imageUrl); //selecting ONLY the url
+
+      if (e.target.id.includes("delete")) {
+        pets.splice(index, 1);
+        allAnimalCards(pets);
+      }
+       });
+  }; //FIRST TRY AND I GOT THE DELETE BUTTON TO WORK PROPERLY!!!! AHHHHH!!!! I AM GETTING THIS!!!
 
   
   addPetBtnModal();

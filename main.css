@@ -30,3 +30,7 @@ div {
 .card-footer {
   background-color: #FFFF8F;
 }
+
+.delete-btn {
+  float: right;
+}
