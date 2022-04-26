@@ -151,7 +151,7 @@ const pets = [
       color: "Orange",
       specialSkill: "Is comfortable with jokes about his receding hairline.",
       type: "cat",
-      imageUrl: "https://570189-1841390-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/08/orange-tabby-cats.jpg"
+      imageUrl: "https://www.thesprucepets.com/thmb/qlDawN0gW1EnW3orDTgEQauwnis=/1999x1499/filters:no_upscale():max_bytes(150000):strip_icc()/Nebelung-21a92ba2210f49dfa06381162b6e68fe.jpg"
     },
     {
       name: "Buddy",
@@ -211,22 +211,97 @@ const pets = [
     }
   ];
 
-  const allAnimalCards = () => {
-    document.querySelector("#card").innerHTML = ""
-  for (const animal of pets) {
-    document.querySelector("#card").innerHTML += `<div class="card" style="width: 18rem;">
-    <img src="${animal.imageUrl}" class="card-img-top" alt="...">
-    <div class="card-header">${animal.name}</div>
-    <div class="card-body">
-      <p class="card-text">${animal.color}</p>
-      <p class="card-text">${animal.specialSkill}</p>
-    </div>
-      <div class="card-footer">${animal.type}</div>
-  </div>`
-  }
-  }
+  // *********  UTILITY FUNCTIONS  ********* //
+const renderToDom = (divId, textToRender) => {
+  const selectedElement = document.querySelector(divId);
+  selectedElement.innerHTML = textToRender;
+};
+  
+  // *********  HTML COMPONENT FUNCTIONS  ********* //
+ 
+  //Add New Pet / Modal
+  const addPetBtnModal = () => {
+    const domString = `
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add-pet">
+      Add A Pet
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="add-pet" tabindex="-1" aria-labelledby="add-pet" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-md-down">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add A Pet</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            
+            <form>
+            <div class="form-floating mb-3">
+              <input class="form-control form-control-lg" type="text" placeholder="Name" id="name" aria-label="name" required>
+              <label for="name">Pet's Name</label>
+            </div>
+        
+            <div class="form-floating mb-3">
+              <input class="form-control form-control-lg" type="text" placeholder="Color" id="color" aria-label="color" required>
+              <label for="color">Pet's Color</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input class="form-control form-control-lg" type="text" placeholder="Special Skill" id="specialSkill" aria-label="specialSkill" required>
+              <label for="specialSkill">Pet's Special Skill</label>
+            </div>
+        
+            <div class="form-floating mb-3">
+              <select class="form-select form-control-lg" id="type" aria-label="type" required>
+                <option value="">Select a type</option>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option></option>
+                <option value="dino">Dino</option>
+              </select>
+              <label for="type">Type</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input class="form-control form-control-lg" type="text" placeholder="Image URL" id="imageUrl" aria-label="imageUrl" required>
+              <label for="imageUrl">URL of Pet's Photo</label>
+            </div>
+        
+            <button 
+              type="submit" 
+              class="btn btn-success" 
+            >
+              Submit
+            </button>
+          </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    renderToDom("#addPet", domString);
+  };
+
+   //HTML for all cards
+   const allAnimalCards = (array) => {
+     let domString = "";
+     for (const animal of array) {
+       domString += `<div class="card" style="width: 18rem;">
+       <img src="${animal.imageUrl}" class="card-img-top" alt="...">
+       <div class="card-header">${animal.name}</div>
+       <div class="card-body">
+       <p class="card-text">${animal.color}</p>
+       <p class="card-text">${animal.specialSkill}</p>
+       </div>
+       <div class="card-footer">${animal.type}</div>
+       </div>`;
+     }
+     renderToDom("#card", domString);
+   }
 
 
+// *********  EVENT LISTENERS  *********  //
   const filterFunction = (event) => {
     console.log(event.target.id);
     const newArr = pets.filter((animal) => animal.type === event.target.id);
@@ -243,10 +318,36 @@ const pets = [
   </div>`
     }
   }
-  
-  allAnimalCards();
 
+  const eventListenerForModal = () => {
+    const formModal = new bootstrap.Modal(document.querySelector("#add-pet"));
+
+    const addPetForm = document.querySelector('form');
+    addPetForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const newPetObj = {
+        name: document.querySelector("#name").value,
+        color: document.querySelector("#color").value,
+        specialSkill: document.querySelector("#specialSkill").value,
+        type: document.querySelector("#type").value,
+        imageUrl: document.querySelector("#imageUrl").value
+      }
+      console.log(newPetObj);
+      pets.push(newPetObj);
+      allAnimalCards(pets);
+
+      formModal.hide();
+      addPetForm.reset();
+    }); 
+  };
+
+  
+  addPetBtnModal();
+  allAnimalCards(pets);
+  
   document.querySelector("#cat").addEventListener("click", filterFunction);
   document.querySelector("#dog").addEventListener("click", filterFunction);
   document.querySelector("#dino").addEventListener("click", filterFunction);
   document.querySelector("#viewAll").addEventListener("click", allAnimalCards);
+  
+  eventListenerForModal();
